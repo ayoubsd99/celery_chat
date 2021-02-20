@@ -40,7 +40,8 @@ INSTALLED_APPS = [
 ]
 INSTALLED_APPS += [
      'chat.apps.ChatConfig',
-      'django_celery_results',   
+      'django_celery_results', 
+      'django_celery_beat',  
 ]
 
 MIDDLEWARE = [

@@ -14,6 +14,13 @@ app = Celery('project')
 #   should have a `CELERY_` prefix.
 app.config_from_object('django.conf:settings', namespace='CELERY')
 
+app.conf.beat_schedule = {
+    'every-15-secound':{
+        'task':"chat.tasks.delete_messages",
+        'schedule':15,
+
+    }
+}
 # Load task modules from all registered Django app configs.
 app.autodiscover_tasks()
 
